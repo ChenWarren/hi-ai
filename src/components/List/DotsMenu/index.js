@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { 
     BsThreeDotsVertical, 
     BsPencilFill, 
@@ -6,7 +6,7 @@ import {
 } from "react-icons/bs";
 
 // Three dots menu
-const DotsMenu = ({
+const DotsMenu = React.memo(({
     setMode,
     setDelete
 }) => {
@@ -47,7 +47,7 @@ const DotsMenu = ({
             }
         </div>
     );
-};
+});
 
 export default DotsMenu
   

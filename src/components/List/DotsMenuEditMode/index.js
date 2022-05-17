@@ -1,7 +1,8 @@
+import React from "react";
 import { FaUndo, FaRegSave } from "react-icons/fa";
 
 // Three dots menu for edit mode
-const DotsMenuEditMode = ({
+const DotsMenuEditMode = React.memo(({
   setMode,
   saveChanges=()=>{},
 }) => {
@@ -28,7 +29,7 @@ const DotsMenuEditMode = ({
             </div>
         </div>
     );
-};
+});
 
 export default DotsMenuEditMode
   

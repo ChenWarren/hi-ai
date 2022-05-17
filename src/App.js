@@ -61,6 +61,8 @@ function App() {
       )
   }
 
+  console.log('app')
+
   return (
     <div className='App'>
       <div className='App-container'>

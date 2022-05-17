@@ -1,11 +1,12 @@
+import React from "react";
 import DotsMenu from "../DotsMenu"
 import { useDeleteItem } from "context/AppContext";
 import { useEffect, useState } from "react";
 
-export default function ItemDisplayMode({
+const ItemDisplayMode = React.memo(({
     setEditMode,
     item,
-}) {
+}) => {
     const { setDeleteItemID } = useDeleteItem()
     const [deleteItem, setDeleteItem] = useState(false)
 
@@ -30,5 +31,7 @@ export default function ItemDisplayMode({
             </div>
         </div>
     );
-}
+})
+
+export default ItemDisplayMode
   

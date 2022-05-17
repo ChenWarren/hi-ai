@@ -1,19 +1,20 @@
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Button from "components/Button";
 
-export default function InputBox({
+const InputBox = React.memo(({
     handleSumit,
     headerText,
     placeHolderText,
-}) {
+}) => {
     const [inputText, setInputText] = useState('')
 
-    const handleEnter = (e) => {
+    const handleEnter = useCallback((e) => {
         if(e.keyCode===13){
             handleSumit(inputText)
             setInputText('')
         }
-    }
+        console.log('func')
+    }, [setInputText])
 
     console.log("Input")
 
@@ -33,5 +34,7 @@ export default function InputBox({
             />
         </div>
     );
-}
+})
+
+export default InputBox
   

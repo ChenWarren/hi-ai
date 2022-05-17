@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import DotsMenuEditMode from "../DotsMenuEditMode";
 import { useUpdateData } from "context/AppContext";
 
-export default function ItemEditMode({
+const ItemEditMode = React.memo(({
     setEditMode,
     item,
     index,
-}) {
+}) => {
     const { setUpdateData } = useUpdateData()
     const [updatePrompt, setUpdatePrompt] = useState(item.prompt)
     const [updateResponse, setUpdateResponse] = useState(item.response[0].text)
@@ -42,5 +42,7 @@ export default function ItemEditMode({
             </div>
         </div>
     );
-}
+})
+
+export default ItemEditMode
   

@@ -1,8 +1,9 @@
+import React from "react"
 
-export default function Button({
+const Button = React.memo(({
   handleClick,
   buttonText,
-}) {
+}) => {
     console.log(buttonText)
     return (
         <button
@@ -12,5 +13,6 @@ export default function Button({
             {buttonText}
         </button>
     );
-}
+})
   
+export default Button

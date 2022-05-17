@@ -1,11 +1,12 @@
+import React from "react";
 import Button from "components/Button";
 import ListItem from "./ListItem";
 import { handleSaveToLocalStorage, handleClearLocalStorage } from "services/storageHandler";
 
-export default function List({
+const List = React.memo(({
     list=[],
     setList=()=>{},
-}) {
+}) => {
 
     console.log("List")
 
@@ -36,5 +37,7 @@ export default function List({
         </div>
         </>
     );
-}
+})
+
+export default List
   

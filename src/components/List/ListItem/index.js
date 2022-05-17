@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ItemEditMode from "../ItemEditMode";
 import ItemDisplayMode from "../ItemDisplayMode";
 
-export default function ListItem({
+const ListItem = React.memo(({
     item,
     index,
-}) {
+}) => {
     const [editMode, setEditMode] = useState(false)
 
     console.log('list item')
@@ -27,7 +27,8 @@ export default function ListItem({
         }
         </>
     );
-}
+})
 
+export default ListItem
 
 
