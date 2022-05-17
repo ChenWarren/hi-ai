@@ -1,0 +1,29 @@
+// Button styles
+@import '../Variables.styles.scss';
+
+.button-container{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: $BlueGreen;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: $DarkJungleGreen;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 2px $ColumbiaBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container:hover {
+    font-weight: 600;
+    background-color: $BlueBell;
+    color: $AliceBlue;
+    box-shadow: 1px 1px 5px $DarkJungleGreen;
+}
+
+.button-container:active {
+    box-shadow: none;
+}

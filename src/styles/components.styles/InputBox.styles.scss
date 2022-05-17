@@ -1,0 +1,22 @@
+// InputBox styles
+@import '../Variables.styles.scss';
+
+.intput-box {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container{
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    outline: none;
+    resize: vertical;
+    font-family: $FontDefault;
+    font-size: 1rem;
+    border-color: $UranianBlue;
+    color: $DarkJungleGreen;
+    border-radius: 5px;
+}

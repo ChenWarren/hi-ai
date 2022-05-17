@@ -1,0 +1,120 @@
+// List component styles
+@import '../Variables.styles.scss';
+
+.list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item-box {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 10px;
+    background-color: $ColumbiaBlue;
+    border-radius: 5px;
+    position: relative;
+}
+
+.section-row {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.left-col{
+    width: 20%;
+    white-space: pre-line;
+    vertical-align: bottom;
+}
+
+.right-col{
+    width: 100%;
+    white-space: pre-line;
+    display: flex;
+    padding: 3px 0;
+    line-height: 1.2;
+}
+
+.input-col {
+    width: 100%;
+    min-height: 200px;
+    line-height: 1.2;
+    resize: vertical;
+    display: flex;
+    padding: 15px;
+    outline: none;
+    font-family: $FontDefault;
+    font-size: 1rem;
+    border-color: $UranianBlue;
+    color: $DarkJungleGreen;
+    border-radius: 3px;
+}
+
+.dots-menu {
+    height: 35px;
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    color: $BlueBell;
+    background-color: $UranianBlue;
+    display: flex;
+    align-items: center;
+}
+
+.dots-menu:hover {
+    background-color: $AliceBlue;
+}
+
+.dots-icon:hover {
+    color: $BlueBell;
+}
+
+.tooltip-container .tooltip {
+    display: flex;
+    visibility: hidden;
+    background-color: $DarkJungleGreen;
+    color: $AliceBlue;
+    padding: 5px;
+    position: absolute;
+    top: -28px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+.tooltip-container:hover .tooltip{
+    visibility: visible;
+    transition-delay: 800ms;
+}
+
+.icon-group {
+    width: 100px;
+    display: flex;
+    padding-left: 4px;
+    justify-content: space-between;
+}
+
+.icon-group-edit-mode {
+    width: 70px;
+    display: flex;
+    padding: 0 4px;
+    justify-content: space-between;
+    
+}
+
+.button-group-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0 5px 0;
+}
+
+@media screen and (max-width: 600px){
+    .section-row {
+        flex-direction: column;
+    }
+
+}
