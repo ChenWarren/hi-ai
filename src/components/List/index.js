@@ -25,9 +25,10 @@ const List = React.memo(({
     return ( 
         <>
         <div className="list-container">
+            <h1>Q&A List</h1>
             <div className="button-group-container">
                 <Button buttonText="Save" handleClick={handleSave}/>
-                <Button buttonText="Clear" handleClick={handleClear}/>
+                <Button buttonText="Clear All" handleClick={handleClear}/>
             </div>
             { list && 
                 list.map((item, i) => (

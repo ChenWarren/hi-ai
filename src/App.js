@@ -66,11 +66,11 @@ function App() {
   return (
     <div className='App'>
       <div className='App-container'>
-        <h1>Hello AI</h1>
+        <h1>AI Learning</h1>
         <InputBox   
           handleSumit={handleSumit} 
-          headerText="Write your prompt and hit Enter key to get AI response." 
-          placeHolderText="Type prompt here..."
+          headerText="Easy Way To Learn Computer Programming!" 
+          placeHolderText="Write your question here to get AI response..."
         />
           { text.length!==0 && <List   
             list={text} setList={setText} 

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import Button from "components/Button";
 
 const InputBox = React.memo(({
@@ -7,14 +7,14 @@ const InputBox = React.memo(({
     placeHolderText,
 }) => {
     const [inputText, setInputText] = useState('')
+    const inpuPrompt = useRef()
 
-    const handleEnter = useCallback((e) => {
-        if(e.keyCode===13){
-            handleSumit(inputText)
-            setInputText('')
-        }
+    const handleEnter = (e) => {
+        handleSumit(inputText)
+        setInputText('')
+        inpuPrompt.current.focus()
         console.log('func')
-    }, [setInputText])
+    }
 
     console.log("Input")
 
@@ -23,14 +23,15 @@ const InputBox = React.memo(({
             <p>{headerText}</p>
             <div className="button-group-container">
                 <Button buttonText="Reset" handleClick={()=>setInputText('')}/>
+                <Button buttonText="Sumit" handleClick={handleEnter}/>
             </div>
             <textarea
+                ref={inpuPrompt}
                 className="input-container"
                 placeholder={placeHolderText} 
                 value={inputText} 
                 onChange={e => setInputText(e.target.value)} 
                 onFocus={() => setInputText('')} 
-                onKeyDown={handleEnter} 
             />
         </div>
     );
