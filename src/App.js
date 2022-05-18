@@ -3,22 +3,23 @@ import { v4 as uuidv4 } from 'uuid';
 import { InputBox, List } from 'components'
 import Fetcher from 'services/fetcher';
 import { handleSaveToLocalStorage } from 'services/storageHandler';
-import { useText, useUpdateData, useDeleteItem } from 'context/AppContext';
+import { useText, useUpdateData, useDeleteItem, useSelectLanguage } from 'context/AppContext';
 
 function App() {
   const {text, setText}= useText()
   const { updateData } = useUpdateData()
   const { deleteItemID } = useDeleteItem()
+  const { selectedLanguage, setSelectedLanguage } = useSelectLanguage()
 
   // Load init data
   useEffect(()=> {
-    if(text===undefined || text.length===0){
-      const savedText = localStorage.getItem('list')
-      if(savedText!==null && savedText!==undefined) {
-        setText(JSON.parse(savedText))
-      }
+    const savedText = localStorage.getItem(selectedLanguage)
+    if(savedText!==null && savedText!==undefined) {
+      setText(JSON.parse(savedText))
+    } else {
+      setText([])
     }
-  }, [])
+  }, [selectedLanguage])
 
   // Updata data
   useEffect(()=>{
@@ -27,7 +28,7 @@ function App() {
       const copyText = [...text]
       copyText[index] = data
       setText(copyText)
-      handleSaveToLocalStorage('list', copyText)
+      handleSaveToLocalStorage(selectedLanguage, copyText)
     }
   }, [updateData])
 
@@ -37,14 +38,14 @@ function App() {
       const copyText = text.filter(item=>item.id!==deleteItemID)
       console.log(copyText)
       setText(copyText)
-      handleSaveToLocalStorage('list', copyText)
+      handleSaveToLocalStorage(selectedLanguage, copyText)
     }
   }, [deleteItemID])
   
   // Sumit prompt and get response
-  const handleSumit = async (promptText) => {
+  const handleSumit = async (promptText, language) => {
       const data = {
-        prompt: promptText,
+        prompt: `${promptText} ${language}`,
         temperature: 0.7,
         max_tokens: 256,
         top_p: 1,
@@ -61,7 +62,7 @@ function App() {
       )
   }
 
-  console.log('app')
+  console.log('app', selectedLanguage)
 
   return (
     <div className='App'>

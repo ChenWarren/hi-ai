@@ -2,23 +2,24 @@ import React from "react";
 import Button from "components/Button";
 import ListItem from "./ListItem";
 import { handleSaveToLocalStorage, handleClearLocalStorage } from "services/storageHandler";
+import { useSelectLanguage } from "context/AppContext";
 
 const List = React.memo(({
     list=[],
     setList=()=>{},
 }) => {
-
+    const { selectedLanguage } = useSelectLanguage()
     console.log("List")
 
     // save to local storage
     const handleSave = () => {
-        const res = handleSaveToLocalStorage("list", list)
+        const res = handleSaveToLocalStorage(selectedLanguage, list)
         setList(JSON.parse(res))
     }
 
     // clear local storage
     const handleClear = () => {
-        handleClearLocalStorage("list")
+        handleClearLocalStorage(selectedLanguage)
         setList([])
     }
 

@@ -13,8 +13,10 @@
     padding: 0 15px;
     margin-bottom: 10px;
     background-color: $ColumbiaBlue;
+    border: solid 1px $UranianBlue;
     border-radius: 5px;
     position: relative;
+    box-shadow: 1px 1px 4px $BlueBell;
 }
 
 .section-row {
@@ -25,8 +27,17 @@
 
 .left-col{
     width: 20%;
-    white-space: pre-line;
     vertical-align: bottom;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-clickable{
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $BlueBell
 }
 
 .right-col{
@@ -56,7 +67,7 @@
     height: 35px;
     position: absolute;
     right: 0;
-    margin: 5px;
+    margin: 15px;
     padding: 5px;
     border-radius: 3px;
     color: $BlueBell;
@@ -103,19 +114,22 @@
     display: flex;
     padding: 0 4px;
     justify-content: space-between;
-    
 }
 
 .button-group-container {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 5px 0 5px 0;
+    padding: 8px 0;
 }
 
 @media screen and (max-width: 600px){
     .section-row {
         flex-direction: column;
+    }
+
+    .left-col{
+        width: 100%;
     }
 
 }

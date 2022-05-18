@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Languages from "config/Languages";
 
 const AppContext = createContext()
 
@@ -7,12 +8,14 @@ const AppContextProvider = ({children}) => {
     const [text, setText]= useState([])
     const [updateData, setUpdateData] = useState(null)
     const [deleteItemID, setDeleteItemID] = useState(null)
+    const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].language)
 
     return(
         <AppContext.Provider value={{
             text, setText,
             updateData, setUpdateData,
-            deleteItemID, setDeleteItemID
+            deleteItemID, setDeleteItemID,
+            selectedLanguage, setSelectedLanguage
         }}>
             {children}
         </AppContext.Provider>
@@ -38,3 +41,7 @@ export const useDeleteItem = () => {
     return { deleteItemID, setDeleteItemID }
 }
 
+export const useSelectLanguage = () => {
+    const { selectedLanguage, setSelectedLanguage } = useContext(AppContext)
+    return { selectedLanguage, setSelectedLanguage }
+}
