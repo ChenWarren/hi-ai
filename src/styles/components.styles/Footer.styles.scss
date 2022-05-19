@@ -1,0 +1,31 @@
+
+
+.footer-row {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: $AliceBlue;
+    box-shadow: -1px -1px 3px $UranianBlue;
+}
+
+.footer-container {
+    width: 80%;
+    max-width: 1024px;
+    display: inherit;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.footer-body {
+    color: $BlueBell;
+    font-size: 0.9rem;
+    padding: 8px 0;
+}
+
+@media screen and (max-width: 600px){
+    .footer-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

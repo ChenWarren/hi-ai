@@ -1,0 +1,29 @@
+// Header component styles
+@import '../Variables.styles.scss';
+
+.header-row{
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: $AliceBlue;
+    box-shadow: 1px 1px 3px $UranianBlue;
+    z-index: 1;
+}
+
+.header-container {
+    width: 80%;
+    max-width: 1024px;
+}
+
+.header-body {
+    color: $BlueBell;
+}
+
+@media screen and (max-width: 600px){
+    .header-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

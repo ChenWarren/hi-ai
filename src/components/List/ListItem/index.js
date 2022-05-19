@@ -8,8 +8,6 @@ const ListItem = React.memo(({
 }) => {
     const [editMode, setEditMode] = useState(false)
 
-    console.log('list item')
-
     return (
         <>
         { editMode ? 

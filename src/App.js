@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { InputBox, List } from 'components'
+import { Header, Footer, InputBox, List } from 'components'
 import Fetcher from 'services/fetcher';
 import { handleSaveToLocalStorage } from 'services/storageHandler';
 import { useText, useUpdateData, useDeleteItem, useSelectLanguage } from 'context/AppContext';
@@ -53,7 +53,6 @@ function App() {
         presence_penalty: 0
       }
       const newID = uuidv4()
-
       const newDate = new Date();
       const res = await Fetcher(data)
       const conversation = { id: newID, prompt: promptText, response: res.result, create_date: newDate}
@@ -62,21 +61,24 @@ function App() {
       )
   }
 
-  console.log('app', selectedLanguage)
-
   return (
     <div className='App'>
+      <Header
+        title="AI Learning" 
+        headerText="AI help you learning Computer Programming!"
+      />
       <div className='App-container'>
-        <h1>AI Learning</h1>
         <InputBox   
           handleSumit={handleSumit} 
-          headerText="Easy Way To Learn Computer Programming!" 
           placeHolderText="Write your question here to get AI response..."
         />
           { text.length!==0 && <List   
             list={text} setList={setText} 
           />}
       </div>
+      <Footer
+        footerText="&copy; 2022-2023"
+      />
     </div>
   );
 }

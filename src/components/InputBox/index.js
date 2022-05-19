@@ -6,26 +6,20 @@ import { useSelectLanguage } from "context/AppContext";
 
 const InputBox = React.memo(({
     handleSumit,
-    headerText,
     placeHolderText,
 }) => {
     const [inputText, setInputText] = useState('')
     const { selectedLanguage, setSelectedLanguage } = useSelectLanguage()
-    // const [option, setOption] = useState(Languages[0].language)
     const inpuPrompt = useRef()
 
-    const handleEnter = (e) => {
+    const handleEnter = () => {
         handleSumit(inputText, selectedLanguage)
         setInputText('')
         inpuPrompt.current.focus()
-        console.log('func')
     }
-
-    console.log("Input", selectedLanguage)
 
     return (
         <div className="intput-box">
-            <p>{headerText}</p>
             <div className="input-header-row">
                 <div className="options-container">
                     <OptionBox options={Languages} option={selectedLanguage} setOption={setSelectedLanguage}/>
@@ -67,6 +61,7 @@ const OptionBox = ({
                     <option 
                         key={op.id} 
                         value={op.language}
+                        className="select-items"
                     >
                         {op.language}
                     </option>

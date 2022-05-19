@@ -4,7 +4,6 @@ const Button = React.memo(({
   handleClick,
   buttonText,
 }) => {
-    console.log(buttonText)
     return (
         <button
             className="button-container" 

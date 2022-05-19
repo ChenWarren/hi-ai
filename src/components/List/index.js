@@ -9,7 +9,6 @@ const List = React.memo(({
     setList=()=>{},
 }) => {
     const { selectedLanguage } = useSelectLanguage()
-    console.log("List")
 
     // save to local storage
     const handleSave = () => {

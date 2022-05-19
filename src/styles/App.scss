@@ -8,11 +8,15 @@
 
 .App-container {
   width: 80%;
+  max-width: 1024px;
+  min-height: 100vh;
+  margin-top: 70px;
 }
 
 @media screen and (max-width: 600px){
   .App-container {
     width: 100%;
+    margin-top: 60px;
     padding: 15px;
   }
 }

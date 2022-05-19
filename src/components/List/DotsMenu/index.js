@@ -13,7 +13,6 @@ const DotsMenu = React.memo(({
     const [expanded, setExpanded] = useState(false);
 
     const handleEdit = () => {
-        console.log('edit');
         setMode(true);
     };
 
@@ -21,7 +20,6 @@ const DotsMenu = React.memo(({
         setDelete(true)
     };
 
-    console.log('dots menu');
     return (
         <div className="dots-menu">
             {expanded ? 
