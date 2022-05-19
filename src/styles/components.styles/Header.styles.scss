@@ -3,6 +3,7 @@
 
 .header-row{
     width: 100%;
+    min-height: 80px;
     padding: 10px 0;
     position: fixed;
     display: flex;
@@ -19,11 +20,29 @@
 
 .header-body {
     color: $BlueBell;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.header-body-col {
+    width: 100%;
+}
+
+.header-body-col-left {
+    width: 100%;
 }
 
 @media screen and (max-width: 600px){
     .header-container {
         width: 100%;
         padding: 0 15px;
+    }
+    .header-body-col-left {
+        display: none;
+    }
+    .header-body {
+        font-size: 0.7rem;
     }
 }

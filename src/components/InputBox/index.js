@@ -30,7 +30,7 @@ const InputBox = React.memo(({
                 </div>
                 <div className="button-group-container">
                     <Button buttonText="Reset" handleClick={()=>setInputText('')}/>
-                    <Button buttonText="Sumit" handleClick={handleEnter}/>
+                    <Button buttonText="Submit" handleClick={handleEnter}/>
                 </div>
             </div>
             <textarea

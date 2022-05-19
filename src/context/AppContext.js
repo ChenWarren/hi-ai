@@ -9,13 +9,15 @@ const AppContextProvider = ({children}) => {
     const [updateData, setUpdateData] = useState(null)
     const [deleteItemID, setDeleteItemID] = useState(null)
     const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].language)
+    const [message, setMessage] = useState('')
 
     return(
         <AppContext.Provider value={{
             text, setText,
             updateData, setUpdateData,
             deleteItemID, setDeleteItemID,
-            selectedLanguage, setSelectedLanguage
+            selectedLanguage, setSelectedLanguage,
+            message, setMessage
         }}>
             {children}
         </AppContext.Provider>
@@ -41,7 +43,14 @@ export const useDeleteItem = () => {
     return { deleteItemID, setDeleteItemID }
 }
 
+// custom select computer language hook
 export const useSelectLanguage = () => {
     const { selectedLanguage, setSelectedLanguage } = useContext(AppContext)
     return { selectedLanguage, setSelectedLanguage }
+}
+
+// custom message hook
+export const useMessage = () => {
+    const {message, setMessage} = useContext(AppContext)
+    return {message, setMessage}
 }
