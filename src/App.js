@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Header, Footer, InputBox, List } from 'components'
+import { Header, Footer, InputBox, List, Popup } from 'components'
 import Fetcher from 'services/fetcher';
 import { handleSaveToLocalStorage } from 'services/storageHandler';
 import { useText, useUpdateData, useDeleteItem, useSelectLanguage, useMessage } from 'context/AppContext';
+import AboutData from 'config/AboutData';
 
 function App() {
   const {text, setText}= useText()
@@ -11,6 +12,7 @@ function App() {
   const { deleteItemID } = useDeleteItem()
   const { selectedLanguage } = useSelectLanguage()
   const { setMessage } = useMessage()
+  const [ popupAbout, setPopupAbout ] = useState(false)
 
   // Load init data
   useEffect(()=> {
@@ -72,9 +74,23 @@ function App() {
   }
 
   return (
+    <>
     <div className='App'>
+      { popupAbout && 
+        <div className='popup-bg'>
+          <Popup 
+            popupTitle={AboutData.title}
+            popupText={AboutData.text}
+            handleClose={setPopupAbout}
+            portfolioLink={AboutData.portfolio}
+            linkedinLink={AboutData.linkedin}
+            githubLink={AboutData.github}
+          />
+        </div>
+      }
       <Header
-        title="AI Learning" 
+        title="AI Learning"
+        handleClick={setPopupAbout} 
       />
       <div className='App-container'>
         <InputBox   
@@ -89,6 +105,7 @@ function App() {
         footerText="&copy; 2022-2023"
       />
     </div>
+    </>
   );
 }
 

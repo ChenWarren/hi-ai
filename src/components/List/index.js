@@ -1,8 +1,8 @@
-import React from "react";
-import Button from "components/Button";
-import ListItem from "./ListItem";
-import { handleSaveToLocalStorage, handleClearLocalStorage } from "services/storageHandler";
-import { useSelectLanguage, useMessage } from "context/AppContext";
+import React from "react"
+import Button from "components/Button"
+import ListItem from "./ListItem"
+import { handleSaveToLocalStorage, handleClearLocalStorage } from "services/storageHandler"
+import { useSelectLanguage, useMessage } from "context/AppContext"
 
 const List = React.memo(({
     list=[],

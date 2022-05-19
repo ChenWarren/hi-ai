@@ -1,0 +1,80 @@
+// Popup styles
+@import '../Variables.styles.scss';
+
+.popup-bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(95, 95, 95, 0.3);
+    z-index:2
+}
+
+.popup-container {
+    width: 80%;
+    height: 80%;
+    padding: 15px;
+    color: $DarkJungleGreen;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10%;
+    max-width: 700px;
+    max-height: 700px;
+    border-radius: 5px;
+    border: 2px solid $AliceBlue;
+    box-shadow: 2px 2px 5px $BlueBell;
+    background-color: $AliceBlue;
+    z-index: 3;
+}
+
+.popup-header {
+    display: inline-flex;
+    justify-content: flex-end;
+    height: 30px;
+    color: $BlueBell;
+}
+
+.popup-title {
+    padding: 10px 20px;
+}
+
+.popup-body {
+    height: 80%;
+    padding: 10px 20px;
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+.popup-footer {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border-top: 1px solid $ColumbiaBlue;
+}
+
+.popup-clickable{
+    padding: 0 20px;
+    color: $BlueGreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-clickable:hover {
+    color: $BlueBell;
+}
+
+@media screen and (max-width: 600px){
+    .popup-container {
+        width: 90%;
+        padding: 8px;
+    }
+    .popup-header {
+        padding: 6px;
+    } 
+}
+

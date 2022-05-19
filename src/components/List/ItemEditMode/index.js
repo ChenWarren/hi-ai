@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import DotsMenuEditMode from "../DotsMenuEditMode";
-import { useUpdateData } from "context/AppContext";
+import React, { useState } from "react"
+import DotsMenuEditMode from "../DotsMenuEditMode"
+import { useUpdateData } from "context/AppContext"
 
 const ItemEditMode = React.memo(({
     setEditMode,

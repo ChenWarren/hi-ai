@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import Languages from "config/Languages";
+import { createContext, useContext, useState } from "react"
+import Languages from "config/Languages"
 
 const AppContext = createContext()
 

@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
-import { FaLongArrowAltLeft } from "react-icons/fa";
-import Languages from "config/Languages";
-import Button from "components/Button";
-import { useSelectLanguage } from "context/AppContext";
+import React, { useState, useRef } from "react"
+import { FaLongArrowAltLeft } from "react-icons/fa"
+import Languages from "config/Languages"
+import Button from "components/Button"
+import { useSelectLanguage } from "context/AppContext"
 
 const InputBox = React.memo(({
     handleSumit,

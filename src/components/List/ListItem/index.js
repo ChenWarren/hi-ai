@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import ItemEditMode from "../ItemEditMode";
-import ItemDisplayMode from "../ItemDisplayMode";
+import React, { useState } from "react"
+import ItemEditMode from "../ItemEditMode"
+import ItemDisplayMode from "../ItemDisplayMode"
 
 const ListItem = React.memo(({
     item,

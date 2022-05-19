@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import { 
     BsThreeDotsVertical, 
     BsPencilFill, 
     BsTrashFill, 
-} from "react-icons/bs";
+} from "react-icons/bs"
 
 // Three dots menu
 const DotsMenu = React.memo(({

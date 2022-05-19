@@ -1,5 +1,5 @@
-import React from "react";
-import { FaUndo, FaRegSave } from "react-icons/fa";
+import React from "react"
+import { FaUndo, FaRegSave } from "react-icons/fa"
 
 // Three dots menu for edit mode
 const DotsMenuEditMode = React.memo(({

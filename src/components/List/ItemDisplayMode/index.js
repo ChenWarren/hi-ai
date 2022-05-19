@@ -1,8 +1,8 @@
-import React from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import DotsMenu from "../DotsMenu";
-import { useDeleteItem } from "context/AppContext";
-import { useEffect, useState } from "react";
+import React from "react"
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"
+import DotsMenu from "../DotsMenu"
+import { useDeleteItem } from "context/AppContext"
+import { useEffect, useState } from "react"
 
 const ItemDisplayMode = React.memo(({
     setEditMode,
