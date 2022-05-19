@@ -12,9 +12,9 @@ const Header = React.memo(({
       <div className='header-container'>
         <h1>{title}</h1>
         <div className='header-body'>
-          <div className='header-body-col-left'>
+          {/* <div className='header-body-col-left'>
             {headerText}
-          </div>
+          </div> */}
           <div className='header-body-col'>
             <Message messageText={message}/>
           </div>

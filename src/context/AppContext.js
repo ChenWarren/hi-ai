@@ -9,7 +9,7 @@ const AppContextProvider = ({children}) => {
     const [updateData, setUpdateData] = useState(null)
     const [deleteItemID, setDeleteItemID] = useState(null)
     const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].language)
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState('AI help you learning Computer Programming!')
 
     return(
         <AppContext.Provider value={{

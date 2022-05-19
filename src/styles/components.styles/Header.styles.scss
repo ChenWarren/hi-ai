@@ -23,14 +23,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .header-body-col {
-    width: 100%;
-}
-
-.header-body-col-left {
     width: 100%;
 }
 
@@ -39,10 +35,8 @@
         width: 100%;
         padding: 0 15px;
     }
-    .header-body-col-left {
-        display: none;
-    }
+    
     .header-body {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
