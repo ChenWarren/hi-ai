@@ -9,11 +9,11 @@ function App() {
   const {text, setText}= useText()
   const { updateData } = useUpdateData()
   const { deleteItemID } = useDeleteItem()
-  const { selectedLanguage, setSelectedLanguage } = useSelectLanguage()
+  const { selectedLanguage } = useSelectLanguage()
 
   // Load init data
   useEffect(()=> {
-    const savedText = localStorage.getItem(selectedLanguage)
+    const savedText = window.localStorage.getItem(selectedLanguage)
     if(savedText!==null && savedText!==undefined) {
       setText(JSON.parse(savedText))
     } else {
